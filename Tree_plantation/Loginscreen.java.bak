@@ -1,0 +1,108 @@
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Loginscreen implements ActionListener
+{
+	private JFrame fr;
+	private JLabel lblLoginID,lblPassword;
+  	private JTextField txtLoginID;
+  	private JPasswordField txtPassword;
+  	private JButton btnSignin,btnReset,btnExit;
+
+
+
+  	Loginscreen()
+  	{
+		fr=new JFrame("Login Screen");
+		fr.setTitle("SIGN IN FOR COTTON COUNTY");
+
+		ImageIcon ic = new ImageIcon("log.png");
+		JLabel pic1 = new JLabel(ic,JLabel.CENTER);
+		pic1.setBounds(0,0,1024,768);
+
+
+		/**********************LOGIN********************************/
+
+ 		lblLoginID =new JLabel("LOGIN ID");
+ 		lblLoginID.setBounds(400,350,50,25);
+
+		txtLoginID =new JTextField();
+  		txtLoginID.setBounds(500,350,150,25);
+
+		/**********************PASSWORD********************************/
+
+ 		lblPassword =new JLabel("PASSWORD");
+ 		lblPassword.setBounds(400,400,70,25);
+
+		txtPassword =new JPasswordField();
+  		txtPassword.setBounds(500,400,150,25);
+
+		/**********************BUTTON********************************/
+
+		btnSignin =new JButton("SIGN IN");
+ 		btnSignin.setBounds(410,450,90,25);
+            btnSignin.addActionListener(this);
+
+ 		btnReset =new JButton("RESET");
+ 		btnReset.setBounds(540,450,90,25);
+             
+             
+            
+
+
+
+
+
+
+		/**********************ADDING OF CONTENT PANE********************************/
+
+		fr.getContentPane().setLayout(null);
+
+		fr.getContentPane().add(lblLoginID);
+
+		fr.getContentPane().add(txtLoginID);
+
+		fr.getContentPane().add(lblPassword);
+
+  		fr.getContentPane().add(txtPassword);
+
+  		fr.getContentPane().add(btnSignin);
+
+  		fr.getContentPane().add(btnReset);
+
+  		fr.getContentPane().add(pic1);
+
+
+  		fr.setSize(1024,768);
+ 		fr.setVisible(true);
+
+	}
+
+
+/**********************ACTION PERFORMERD EVENT********************************/
+
+            public void actionPerformed(ActionEvent ae)
+            {
+            
+                  if(ae.getSource() == btnSignin)
+                  {
+                        fr.setVisible(false);
+                        new Mainscreen();
+                  
+                  }
+            
+            }
+ 
+public static void main(String arg[])
+
+    {
+
+	    new Loginscreen();
+
+    }
+
+ }
+
+
+
